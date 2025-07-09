@@ -1,0 +1,130 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-width: 0;
+  background: #001B6A;
+  color: #FAFAE2;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 70px;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-family: 'Bebas Neue', 'Montserrat', Arial, sans-serif;
+  font-size: 2.2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  background: #FAFAE2;
+  color: #001B6A;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 32px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 8px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.section a {
+  font-family: 'Bebas Neue', 'Montserrat', Arial, sans-serif;
+  font-size: 1.2rem;
+  color: #FAFAE2;
+  text-decoration: none;
+  padding: 10px 22px;
+  border-radius: 24px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  letter-spacing: 1px;
+  font-weight: 500;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.section a:hover, .section a.active {
+  background: #FAFAE2;
+  color: #001B6A;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+.hamburger.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+.hamburger span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: #FAFAE2;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+@media (max-width: 900px) {
+  .header {
+    padding: 0 10px;
+    height: 56px;
+  }
+  .logo {
+    font-size: 1.3rem;
+    width: 36px;
+    height: 36px;
+    margin-right: 16px;
+  }
+  .right-section {
+    display: none;
+    position: absolute;
+    top: 56px; /* or your header height */
+    right: 0;
+    background: #001B6A;
+    flex-direction: column;
+    width: 100vw;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    padding: 20px 0;
+    z-index: 1050;
+  }
+  .right-section.open {
+    display: flex;
+  }
+  .right-section {
+    gap: 2px;
+  }
+  .section a {
+    font-size: 1rem;
+    padding: 8px 10px;
+  }
+  .hamburger { display: flex; }
+}
